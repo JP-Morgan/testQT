@@ -1,4 +1,4 @@
-
+﻿
 #ifndef FIRST_LITTLE_PROJECT_H
 #define FIRST_LITTLE_PROJECT_H
 
@@ -18,6 +18,17 @@ class First_little_project : public QDialog
 public:
     First_little_project(QWidget *parent = nullptr);
     ~First_little_project();
+
+private slots:
+    void on_pushButton_Delete_clicked();
+
+    void on_checkBox_Underline_clicked(bool checked);
+
+    void on_checkBox_Italic_clicked(bool checked);
+
+    void on_checkBox_Bold_clicked(bool checked);
+
+    void do_FontColor();
 
 private:
     Ui::First_little_project *ui;
