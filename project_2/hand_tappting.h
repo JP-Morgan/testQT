@@ -19,6 +19,12 @@ class Hand_tappting : public QDialog
 public:
     Hand_tappting(QWidget *parent = nullptr);
     ~Hand_tappting();
+private slots:
+    void do_chkBoxUnder(bool QChecked);
+    void do_chkBoxItalic(bool QChecked);
+    void do_chkBoxBold(bool QChecked);
+
+    void do_setFontColor();
 private:
     //QCheckBox为复选按钮
     QCheckBox* chkBoxUnder;
