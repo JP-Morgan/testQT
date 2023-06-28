@@ -21,7 +21,7 @@ First_little_project::~First_little_project()
 
 
 
-void First_little_project::on_pushButton_Delete_clicked()
+void First_little_project::on_pushButton_Delete_clicked()//删除txt中的内容！
 {
     ui->plainTextEdit->clear();
 }

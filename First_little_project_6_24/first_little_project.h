@@ -28,7 +28,10 @@ private slots:
 
     void on_checkBox_Bold_clicked(bool checked);
 
-    void do_FontColor();
+    void do_FontColor();//对颜色的修改
+    //为什么跟上面的接口设计的不一样？
+    //主要因为！颜色的修改只能同时出现一次！
+    //所以.............只需要一个接口在接口中进行判断
 
 private:
     Ui::First_little_project *ui;
