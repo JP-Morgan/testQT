@@ -37,6 +37,29 @@ Widget::Widget(QWidget *parent)
 
     void (Subwidget::*testSignal)(int ,QString) = Subwidget::mySignal;
     connect(&win1,testSignal,this,&Widget::dealSlot);
+
+
+
+    //Lambda表达式，匿名函数
+    //C++11
+    //QT配置信号一切
+
+    QPushButton *a8 = new QPushButton(this);
+    a8->setText("Lambda");
+    a8->move(150,150);
+    connect(a8,&QPushButton::clicked,
+            //如果[]里面为等号意思就是把外部的所以变量，类中所以成员函数传进来（传值的方式）——只读
+            //如果是this，类中所以成员函数传进来
+            //如果是& 引用，意思就是把外部的所以变量（如果按键是指针类型不要用&）
+            [=]()mutable//加mutable为可修改
+            {
+
+            }
+            )
+
+
+
+
 }
 void Widget::Swap()
 {//子窗口显示
