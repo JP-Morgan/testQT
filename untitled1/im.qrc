@@ -1,0 +1,23 @@
+<RCC>
+    <qresource prefix="/new/prefix1">
+        <file>im/boy.gif</file>
+        <file>im/butterfly.png</file>
+        <file>im/butterfly1.png</file>
+        <file>im/c++father.jpg</file>
+        <file>im/c++study.jpg</file>
+        <file>im/chatQQ.gif</file>
+        <file>im/down.png</file>
+        <file>im/face.png</file>
+        <file>im/Frame.jpg</file>
+        <file>im/Luffy.png</file>
+        <file>im/LuffyQ.png</file>
+        <file>im/mario.gif</file>
+        <file>im/myheart.png</file>
+        <file>im/OnePiece.png</file>
+        <file>im/QT.jpg</file>
+        <file>im/qt2.png</file>
+        <file>im/Sunny.jpg</file>
+        <file>im/sunny.png</file>
+        <file>im/up.png</file>
+    </qresource>
+</RCC>
