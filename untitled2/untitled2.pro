@@ -10,10 +10,12 @@ CONFIG += c++17
 
 SOURCES += \
     main.cpp \
+    mybutton.cpp \
     mylabel.cpp \
     widget.cpp
 
 HEADERS += \
+    mybutton.h \
     mylabel.h \
     widget.h
 

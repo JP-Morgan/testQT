@@ -1,4 +1,4 @@
-
+﻿
 #ifndef WIDGET_H
 #define WIDGET_H
 
@@ -18,9 +18,15 @@ class Widget : public QWidget
 public:
     Widget(QWidget *parent = nullptr);
     ~Widget();
+protected:
+    //键盘按下事件
+    void keyPressEvent(QKeyEvent *event);
+    //计时器事件
+    void timerEvent(QTimerEvent *event);
 
 private:
     Ui::Widget *ui;
+    int timerId;
 };
 
 #endif // WIDGET_H
