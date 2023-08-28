@@ -1,4 +1,4 @@
-/********************************************************************************
+﻿/********************************************************************************
 ** Form generated from reading UI file 'widget.ui'
 **
 ** Created by: Qt User Interface Compiler version 6.2.4
@@ -11,8 +11,8 @@
 
 #include <QtCore/QVariant>
 #include <QtWidgets/QApplication>
-#include <QtWidgets/QVBoxLayout>
 #include <QtWidgets/QWidget>
+#include <mybutton.h>
 #include <mylabel.h>
 
 QT_BEGIN_NAMESPACE
@@ -20,21 +20,20 @@ QT_BEGIN_NAMESPACE
 class Ui_Widget
 {
 public:
-    QVBoxLayout *verticalLayout;
     MyLabel *label;
+    Mybutton *pushButton;
 
     void setupUi(QWidget *Widget)
     {
         if (Widget->objectName().isEmpty())
             Widget->setObjectName(QString::fromUtf8("Widget"));
         Widget->resize(800, 600);
-        verticalLayout = new QVBoxLayout(Widget);
-        verticalLayout->setObjectName(QString::fromUtf8("verticalLayout"));
         label = new MyLabel(Widget);
         label->setObjectName(QString::fromUtf8("label"));
-
-        verticalLayout->addWidget(label);
-
+        label->setGeometry(QRect(9, 9, 771, 171));
+        pushButton = new Mybutton(Widget);
+        pushButton->setObjectName(QString::fromUtf8("pushButton"));
+        pushButton->setGeometry(QRect(70, 380, 75, 24));
 
         retranslateUi(Widget);
 
@@ -45,6 +44,7 @@ public:
     {
         Widget->setWindowTitle(QCoreApplication::translate("Widget", "Widget", nullptr));
         label->setText(QString());
+        pushButton->setText(QCoreApplication::translate("Widget", "ok", nullptr));
     } // retranslateUi
 
 };
