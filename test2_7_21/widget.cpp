@@ -55,7 +55,7 @@ Widget::Widget(QWidget *parent)
             {
 
             }
-            )
+            );
 
 
 
