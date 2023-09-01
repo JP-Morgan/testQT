@@ -1,4 +1,4 @@
-
+﻿
 #ifndef WIDGET_H
 #define WIDGET_H
 
@@ -18,6 +18,13 @@ class Widget : public QWidget
 public:
     Widget(QWidget *parent = nullptr);
     ~Widget();
+
+private slots:
+    void on_delete_2_clicked();
+
+    void on_Confir_delete_clicked();
+
+    void on_pushButton_2_clicked();
 
 private:
     Ui::Widget *ui;
