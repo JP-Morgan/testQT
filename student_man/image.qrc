@@ -1,0 +1,18 @@
+<RCC>
+    <qresource prefix="/new/prefix1">
+        <file>image/banjiguanli-.png</file>
+        <file>image/cuowu.png</file>
+        <file>image/gonggaotongzhi-.png</file>
+        <file>image/jiaoxueguanli-.png</file>
+        <file>image/logo.png</file>
+        <file>image/nianjiguanli-.png</file>
+        <file>image/pc-zhengchang.png</file>
+        <file>image/qingchu.png</file>
+        <file>image/wodebanji-.png</file>
+        <file>image/xueshengguanli-.png</file>
+        <file>image/xuexiaoguanli-.png</file>
+        <file>image/zengjiabanji-.png</file>
+        <file>image/zengjianianji-.png</file>
+        <file>image/zengjiaxuesheng-.png</file>
+    </qresource>
+</RCC>
