@@ -22,6 +22,8 @@ MainWindow::MainWindow(QWidget *parent)
     MyMeun();
     //底下状态栏
     StatusBar();
+    //左边的树
+    LeftTree();
 
 }
 
@@ -44,6 +46,7 @@ void MainWindow::MyMeun()
             [=]()
             {
                 this->close();
+                _Login.close();
             }
             );
     connect(pre_login, &QAction::triggered,
@@ -54,7 +57,7 @@ void MainWindow::MyMeun()
             }
             );
 }
-
+//状态栏
 void MainWindow::StatusBar()
 {
     QStatusBar *statusBr = statusBar();
@@ -70,6 +73,29 @@ void MainWindow::StatusBar()
     QString tr = "用户:";
     tr+=a;
     statusBr->addPermanentWidget(new QLabel(tr, this));
+}
+//左边的树
+void MainWindow::LeftTree()
+{
+    ui->treeWidget->clear();
+    ui->treeWidget->setColumnCount(1);
+    QStringList name;
+
+    name<<"学生管理系统";
+    QTreeWidgetItem *Father = new QTreeWidgetItem(ui->treeWidget,name);
+    ui->treeWidget->addTopLevelItem(Father);
+
+    name.clear();
+    name<<"学生管理";
+    QTreeWidgetItem *Child1 = new QTreeWidgetItem(Father,name);
+
+    name.clear();
+    name<<"管理员管理";
+    QTreeWidgetItem *Child2 = new QTreeWidgetItem(Father,name);
+    Father->addChild(Child1);
+    Father->addChild(Child2);
+    //全部展开
+    ui->treeWidget->expandAll();
 }
 
 

@@ -7,7 +7,7 @@
     <x>0</x>
     <y>0</y>
     <width>800</width>
-    <height>600</height>
+    <height>606</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -37,7 +37,7 @@
       <property name="minimumSize">
        <size>
         <width>135</width>
-        <height>480</height>
+        <height>375</height>
        </size>
       </property>
       <property name="maximumSize">
@@ -46,6 +46,29 @@
         <height>16777215</height>
        </size>
       </property>
+      <attribute name="headerVisible">
+       <bool>false</bool>
+      </attribute>
+      <column>
+       <property name="text">
+        <string>学生管理系统</string>
+       </property>
+      </column>
+      <item>
+       <property name="text">
+        <string>学生管理系统</string>
+       </property>
+       <item>
+        <property name="text">
+         <string>学生管理</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>管理员管理</string>
+        </property>
+       </item>
+      </item>
      </widget>
     </item>
     <item row="1" column="1">
@@ -53,7 +76,7 @@
       <property name="minimumSize">
        <size>
         <width>641</width>
-        <height>475</height>
+        <height>481</height>
        </size>
       </property>
       <property name="maximumSize">
@@ -62,7 +85,61 @@
         <height>16777215</height>
        </size>
       </property>
-      <widget class="QWidget" name="page"/>
+      <property name="currentIndex">
+       <number>0</number>
+      </property>
+      <widget class="QWidget" name="page">
+       <layout class="QGridLayout" name="gridLayout_3">
+        <item row="0" column="4">
+         <widget class="QPushButton" name="pushButton_3">
+          <property name="text">
+           <string>修改</string>
+          </property>
+         </widget>
+        </item>
+        <item row="0" column="1">
+         <widget class="QLineEdit" name="lineEdit"/>
+        </item>
+        <item row="0" column="3">
+         <widget class="QPushButton" name="pushButton_2">
+          <property name="text">
+           <string>增加</string>
+          </property>
+         </widget>
+        </item>
+        <item row="0" column="5">
+         <widget class="QPushButton" name="pushButton_4">
+          <property name="text">
+           <string>删除</string>
+          </property>
+         </widget>
+        </item>
+        <item row="0" column="0">
+         <widget class="QCheckBox" name="checkBox">
+          <property name="text">
+           <string>全选</string>
+          </property>
+         </widget>
+        </item>
+        <item row="0" column="2">
+         <widget class="QPushButton" name="pushButton">
+          <property name="text">
+           <string>搜索</string>
+          </property>
+         </widget>
+        </item>
+        <item row="1" column="0" colspan="6">
+         <widget class="QTableWidget" name="tableWidget">
+          <property name="minimumSize">
+           <size>
+            <width>0</width>
+            <height>375</height>
+           </size>
+          </property>
+         </widget>
+        </item>
+       </layout>
+      </widget>
       <widget class="QWidget" name="page_2"/>
      </widget>
     </item>

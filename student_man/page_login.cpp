@@ -34,6 +34,7 @@ void Page_Login::on_log_on_1_clicked()
 
     //成功就进入
     emit sendLoginSuccess();
+    this->close();
 
 }
 //确认注册

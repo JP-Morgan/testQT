@@ -20,6 +20,7 @@ public:
     ~MainWindow();
     void MyMeun();
     void StatusBar();
+    void LeftTree();
 
 private:
     Ui::MainWindow *ui;
