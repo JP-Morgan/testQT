@@ -29,10 +29,11 @@ public:
     explicit StudentSql(QObject *parent = nullptr);
     //链接数据库
     void MySql_link(QString HostName = "127.0.0.1", QString UserName = "root",QString Password = "Morgan2004",QString DatabaseName = "data",int Port = 3306);
+
     //查询学生数量
     quint32 FindStudents();
 
-    //查询学生第几页数据
+    //查询学生第几页数据,从第0页开始
     QList<StuInfo> FindPageNumber(quint32 page,quint32 uiCnt);
 
     //查询所有用户

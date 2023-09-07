@@ -15,10 +15,17 @@ StudentSql::StudentSql(QObject *parent)
     qDebug() << QSqlDatabase::drivers();
     //    链接数据库
     MySql_link();
-    StuInfo s;
-    s.name = "小米";
-    //添加学生test
-    AddStudent(s);
+//    StuInfo s;
+//    s.name = "小米";
+//    //添加学生test
+//    AddStudent(s);
+    //查询页数
+    FindPageNumber(2,3);
+    //删除学生
+    DeletStudent(4);
+    //清空学生数据
+    ClearStudent();
+
 }
 //链接数据库
 QSqlDatabase db1 = QSqlDatabase::addDatabase("QMYSQL","student");
@@ -68,23 +75,49 @@ QList<StuInfo> StudentSql::FindPageNumber(quint32 page, quint32 uiCnt)
     findpagenumber.addBindValue(page*uiCnt);  
     findpagenumber.exec();
     StuInfo info;
-    while(findstudent.next())
+    while(findpagenumber.next())
     {
-        if (!findstudent.isValid()) {
+        if (!findpagenumber.isValid()) {
             qDebug() << "Error in query";
             break;
         }
-        info.id = findstudent.value(0).toUInt();
-        info.name = findstudent.value(1).toUInt();
-        info.age = findstudent.value(2).toUInt();
-        info.grade = findstudent.value(3).toUInt();
-        info.myclass = findstudent.value(4).toUInt();
-        info.studentid = findstudent.value(5).toUInt();
-        info.phone = findstudent.value(6).toUInt();
-        info.wechat = findstudent.value(7).toUInt();
+        info.id = findpagenumber.value(0).toUInt();
+        info.name = findpagenumber.value(1).toString();
+        info.age = findpagenumber.value(2).toUInt();
+        info.grade = findpagenumber.value(3).toUInt();
+        info.myclass = findpagenumber.value(4).toUInt();
+        info.studentid = findpagenumber.value(5).toUInt();
+        info.phone = findpagenumber.value(6).toString();
+        info.wechat = findpagenumber.value(7).toString();
         Numder.push_back(info);
     }
     return Numder;
+}
+
+//修改学生信息
+void StudentSql::ModifyInfo(StuInfo info)
+{
+    QSqlQuery addstudent(db1);
+    //我这种发方法可以防止Sql注入:nam......
+    QString Sql = QString("UPDATE student SET name = ? WHERE id = ?;");
+    addstudent.prepare(Sql);
+    addstudent.addBindValue(info.name);
+    addstudent.addBindValue(info.id);
+    addstudent.exec();
+}
+//删除学生
+bool StudentSql::DeletStudent(int id)
+{
+    QSqlQuery Delet(db1);
+    QString sql = "DELETE FROM student WHERE id = ?;";
+    Delet.prepare(sql);
+    Delet.addBindValue(id);
+    if(Delet.exec()) {
+        return true;
+    } else {
+        qDebug() << Delet.lastError();
+        return false;
+    }
 }
 
 
@@ -110,6 +143,29 @@ bool StudentSql::AddStudent(StuInfo info)
         qDebug() << "Insert failed:" << addstudent.lastError();
         return false; // 插入失败
     }
+}
+//清空学生数据
+void StudentSql::ClearStudent()
+{
+
+    QSqlQuery Delet(db1);
+
+    QString sql = "DELETE FROM student;";
+
+    Delet.prepare(sql);
+
+
+
+    if(Delet.exec()) {
+
+        QMessageBox::information(nullptr, "提示", "学生数据已清空。");
+    } else {
+
+        qDebug() << Delet.lastError();
+
+        QMessageBox::warning(nullptr, "错误", "清空学生数据时发生错误：" + Delet.lastError().text());
+    }
+
 }
 
 
