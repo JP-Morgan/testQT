@@ -2,7 +2,10 @@
 #ifndef MAINWINDOW_H
 #define MAINWINDOW_H
 
+#include <QKeyEvent>
 #include <QMainWindow>
+#include <QPainter>
+#include <qevent.h>
 #include "page_login.h"
 
 
@@ -18,9 +21,11 @@ class MainWindow : public QMainWindow
 public:
     MainWindow(QWidget *parent = nullptr);
     ~MainWindow();
+    virtual void keyPressEvent(QKeyEvent *event);
     void MyMeun();
     void StatusBar();
     void LeftTree();
+
 
 private:
     Ui::MainWindow *ui;

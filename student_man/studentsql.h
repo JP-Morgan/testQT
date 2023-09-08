@@ -42,8 +42,8 @@ public:
     //查询用户是否存在
     bool FindUserTrueFalse(QString strUser);
 
-    //修改权限
-    void ModifyPower(QString str);
+    //更新用户信息
+    void updateUser(userInfo info);
 
     //修改学生信息
     void ModifyInfo(StuInfo info);
@@ -58,7 +58,7 @@ public:
     bool AddStudent(StuInfo info);
 
     //增加单个用户
-    void AddOnlyUser(userInfo info);
+    bool AddOnlyUser(userInfo info);
 
     //清空学生列表
     void ClearStudent();

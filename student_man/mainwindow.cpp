@@ -4,6 +4,9 @@
 #include <QMenu>
 #include <QAction>
 #include <QDebug>
+#include <QKeyEvent>
+#include <QFile>
+#include <QCoreApplication>
 MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent)
     , ui(new Ui::MainWindow)
@@ -31,6 +34,22 @@ MainWindow::~MainWindow()
 {
     delete ui;
 }
+
+void MainWindow::keyPressEvent(QKeyEvent *event)
+{
+    if(event->key() == Qt::Key_F6)
+    {
+        QFile f;
+        auto str = QCoreApplication::applicationDirPath();
+        f.setFileName(str+"//"+"stuqss.css");
+        f.open(QIODevice::ReadOnly);
+        QString strQss = f.readAll();
+        _Login.setStyleSheet(strQss);
+        this->setStyleSheet(strQss);
+    }
+}
+
+
 //菜单控制
 void MainWindow::MyMeun()
 {
@@ -97,6 +116,7 @@ void MainWindow::LeftTree()
     //全部展开
     ui->treeWidget->expandAll();
 }
+
 
 
 

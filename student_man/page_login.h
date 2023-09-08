@@ -23,6 +23,7 @@ private slots:
     void on_log_on_1_clicked();
 
     void on_register_2_clicked();
+
 signals:
     void sendLoginSuccess();
 
