@@ -7,6 +7,8 @@
 #include <QKeyEvent>
 #include <QFile>
 #include <QCoreApplication>
+#include <QStatusBar>
+#include <qlabel.h>
 MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent)
     , ui(new Ui::MainWindow)
