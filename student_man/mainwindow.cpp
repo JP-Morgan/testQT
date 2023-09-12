@@ -29,7 +29,6 @@ MainWindow::MainWindow(QWidget *parent)
     StatusBar();
     //左边的树
     LeftTree();
-
 }
 
 MainWindow::~MainWindow()
@@ -90,10 +89,19 @@ void MainWindow::StatusBar()
     //从左到有
     //statusBr->addWidget(new QLabel("UTF8", this));
     //从有到左
+//    QString a = "admin";
+//    QString tr = "用户:";
+//    tr+=a;
+//    statusBr->addPermanentWidget(new QLabel(tr, this));
+    //QStatusBar *statusBar = statusBar();
+
     QString a = "admin";
-    QString tr = "用户:";
-    tr+=a;
-    statusBr->addPermanentWidget(new QLabel(tr, this));
+    QString labelText = "用户: " + a;
+
+        QLabel *label = new QLabel(labelText, this);
+    label->setStyleSheet("color: white;"); // 设置文本颜色为红色
+
+    statusBr->addPermanentWidget(label);
 }
 //左边的树
 void MainWindow::LeftTree()
@@ -118,7 +126,4 @@ void MainWindow::LeftTree()
     //全部展开
     ui->treeWidget->expandAll();
 }
-
-
-
 

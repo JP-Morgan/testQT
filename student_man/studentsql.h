@@ -26,6 +26,14 @@ class StudentSql : public QObject
 {
     Q_OBJECT
 public:
+    static StudentSql *ptrstuSql;
+    static StudentSql *getinstance()
+    {
+        if(ptrstuSql == nullptr)
+        {
+            ptrstuSql = new StudentSq
+        }
+    }
     explicit StudentSql(QObject *parent = nullptr);
     //链接数据库
     void MySql_link(QString HostName = "127.0.0.1", QString UserName = "root",QString Password = "Morgan2004",QString DatabaseName = "data",int Port = 3306);

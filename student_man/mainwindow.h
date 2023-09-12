@@ -27,6 +27,8 @@ public:
     void LeftTree();
 
 
+private slots:
+
 private:
     Ui::MainWindow *ui;
     Page_Login _Login;

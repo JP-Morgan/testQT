@@ -7,6 +7,7 @@
 #include <QSqlQuery>
 #include <QVariantList>
 #include <qsqlquery.h>
+StudentSql * StudentSql::ptrstuSql = nullptr;
 StudentSql::StudentSql(QObject *parent)
     : QObject{parent}
 {
