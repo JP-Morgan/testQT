@@ -131,6 +131,33 @@ QList<userInfo> StudentSql::FindAllUser()
     }
     return Numder;
 }
+//查询所有学生
+QList<StuInfo> StudentSql::FindAllStudent()
+{
+    QList<StuInfo> Numder;
+    QSqlQuery studentsql(db1);
+    QString sql = "SELECT * FROM student;";
+    studentsql.prepare(sql);
+    studentsql.exec();
+    StuInfo info;
+    while(studentsql.next())
+    {
+        if (!studentsql.isValid()) {
+            qDebug() << "错误";
+            break;
+        }
+        info.id = studentsql.value(0).toUInt();
+        info.name = studentsql.value(1).toString();
+        info.age = studentsql.value(2).toUInt();
+        info.grade = studentsql.value(3).toUInt();
+        info.myclass = studentsql.value(4).toUInt();
+        info.studentid = studentsql.value(5).toUInt();
+        info.phone = studentsql.value(6).toString();
+        info.wechat = studentsql.value(7).toString();
+        Numder.push_back(info);
+    }
+    return Numder;
+}
 //查询用户是否存在
 bool StudentSql::FindUserTrueFalse(QString strUser)
 {

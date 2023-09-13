@@ -29,10 +29,11 @@ public:
     static StudentSql *ptrstuSql;
     static StudentSql *getinstance()
     {
-        if(ptrstuSql == nullptr)
+        if(nullptr == ptrstuSql)
         {
-            ptrstuSql = new StudentSq
+            ptrstuSql = new StudentSql;
         }
+        return ptrstuSql;
     }
     explicit StudentSql(QObject *parent = nullptr);
     //链接数据库
@@ -46,6 +47,9 @@ public:
 
     //查询所有用户
     QList<userInfo> FindAllUser();
+
+    //查询所有学生
+    QList<StuInfo> FindAllStudent();
 
     //查询用户是否存在
     bool FindUserTrueFalse(QString strUser);

@@ -189,11 +189,6 @@
           <attribute name="verticalHeaderCascadingSectionResizes">
            <bool>false</bool>
           </attribute>
-          <row>
-           <property name="text">
-            <string> 123</string>
-           </property>
-          </row>
           <column>
            <property name="text">
             <string>ID</string>
@@ -234,31 +229,6 @@
             <string>微信</string>
            </property>
           </column>
-          <item row="0" column="0">
-           <property name="text">
-            <string>123</string>
-           </property>
-          </item>
-          <item row="0" column="1">
-           <property name="text">
-            <string>123</string>
-           </property>
-          </item>
-          <item row="0" column="2">
-           <property name="text">
-            <string>123</string>
-           </property>
-          </item>
-          <item row="0" column="3">
-           <property name="text">
-            <string>123123</string>
-           </property>
-          </item>
-          <item row="0" column="4">
-           <property name="text">
-            <string>123</string>
-           </property>
-          </item>
          </widget>
         </item>
        </layout>

@@ -7,6 +7,7 @@
 #include <QPainter>
 #include <qevent.h>
 #include "page_login.h"
+#include "studentsql.h"
 
 
 QT_BEGIN_NAMESPACE
@@ -32,6 +33,8 @@ private slots:
 private:
     Ui::MainWindow *ui;
     Page_Login _Login;
+    StudentSql *m_StudentSql;
+    quint32 m_SdudentSum;
 };
 
 #endif // MAINWINDOW_H
